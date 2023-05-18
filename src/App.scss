@@ -1,0 +1,70 @@
+$pc-media: 1279px;
+$tab-media: 768px;
+$tabs-media: 767px;
+
+@mixin phone-width() {
+  @media all and (max-width: $tabs-media) {
+    @content;
+  }
+}
+
+@mixin pc-width() {
+  @media all and (min-width: $pc-media) {
+    @content;
+  }
+}
+
+@mixin pad-width() {
+  @media all and (min-width: $tab-media) {
+    @content;
+  }
+}
+
+//style start from below-----------------------------------------
+
+.App {
+  text-align: center;
+}
+
+#mohan-img {
+  & img {
+    height: 2rem;
+  }
+}
+
+.videoList {
+  & img {
+    width: 5rem;
+  }
+}
+
+.comment {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  // font-family: "Avenir__Regular";
+
+  &__sole {
+    display: flex;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    border-bottom: 2px solid #e1e1e1;
+
+    & img {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      margin-right: 2rem;
+    }
+
+    & h3 {
+      font-size: 1rem;
+      color: #323232;
+    }
+
+    & p {
+      font-size: 1rem;
+    }
+  }
+}

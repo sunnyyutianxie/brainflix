@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+}
+
+#mohan-img img {
+  height: 2rem;
+}
+
+.videoList img {
+  width: 5rem;
+}
+
+.comment {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.comment__sole {
+  display: flex;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  border-bottom: 2px solid #e1e1e1;
+}
+.comment__sole img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+.comment__sole h3 {
+  font-size: 1rem;
+  color: #323232;
+}
+.comment__sole p {
+  font-size: 1rem;
+}/*# sourceMappingURL=App.css.map */
