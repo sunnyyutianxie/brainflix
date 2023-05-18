@@ -9,7 +9,6 @@ import CommentList from "./components/Component/CommentList";
 function App() {
   const [videos, setVideos] = useState(videoDetails);
   const [nowVideo, setNowVideo] = useState(videos[0]);
-
   const handleVideoClick = (id) => {
     const foundVideo = videos.find((video) => video.id === id);
     setNowVideo(foundVideo);
