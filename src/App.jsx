@@ -11,7 +11,6 @@ function App() {
   const [nowVideo, setNowVideo] = useState(videos[0]);
 
   const handleVideoClick = (id) => {
-    // console.log(id);
     const foundVideo = videos.find((video) => video.id === id);
     // console.log(foundVideo);
     setNowVideo(foundVideo);
