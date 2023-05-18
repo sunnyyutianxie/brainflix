@@ -1,6 +1,6 @@
 import { useState } from "react";
 import videoDetails from "./data/video-details.json";
-import "./App.css";
+import "./App.scss";
 import Header from "./components/Component/Header";
 import VideoList from "./components/Component/VideoList";
 import NowVideo from "./components/Component/NowVideo";
@@ -14,12 +14,12 @@ function App() {
     setNowVideo(foundVideo);
   };
 
-  //TODO: make it functional
+  //TODO: make it functional, update the comment
   function addComment(content) {
     let temArray = [
       {
-        name: "Unknown",
         comment: content,
+        name: "Unknown",
       },
     ];
     let newArray = nowVideo.comments.concat(temArray);

@@ -38,6 +38,36 @@ $tabs-media: 767px;
   }
 }
 
+.header {
+  &__left {
+    width: 100%;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    > input[type="text"] {
+      margin-right: 10px;
+    }
+
+    > button[type="submit"] {
+      order: -1;
+      margin-right: 10px;
+    }
+
+    > #mohan-img {
+      margin-right: 10px;
+    }
+
+    > button[type="button"] {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+}
+
 .comment {
   margin-top: 1rem;
   margin-bottom: 2rem;

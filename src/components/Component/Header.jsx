@@ -5,14 +5,14 @@ import headerImg from "../../assets/images/Mohan-muruge.jpg";
 
 function Header() {
   return (
-    <div class="header">
-      <div class="header__left">
-        <a href="#">
+    <div className="header">
+      <div className="header__left">
+        <a>
           <img src={BrainFlixLogo} alt="" />
         </a>
       </div>
 
-      <div class="header__right">
+      <div className="header__right">
         <button type="submit">
           <img src={searchLogo} alt="" />
         </button>
@@ -21,9 +21,9 @@ function Header() {
           <img src={uploadButton} alt="" />
           UPLOAD
         </button>
-      </div>
-      <div id="mohan-img">
-        <img src={headerImg} alt="" />
+        <div id="mohan-img">
+          <img src={headerImg} alt="" />
+        </div>
       </div>
     </div>
   );

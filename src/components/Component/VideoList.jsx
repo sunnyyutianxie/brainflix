@@ -6,7 +6,7 @@ function VideoList(props) {
         .filter((video) => {
           //   console.log(video.id);
           //   console.log(props.nowVideo.id);
-          return video.id != props.nowVideo.id;
+          return video.id !== props.nowVideo.id;
         })
         .map((video) => (
           <div
