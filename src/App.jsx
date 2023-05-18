@@ -12,7 +12,6 @@ function App() {
 
   const handleVideoClick = (id) => {
     const foundVideo = videos.find((video) => video.id === id);
-    // console.log(foundVideo);
     setNowVideo(foundVideo);
   };
 
