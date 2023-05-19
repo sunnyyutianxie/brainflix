@@ -326,20 +326,12 @@ $tabs-media: 767px;
     margin-bottom: 1rem;
 
     &-left {
-      // height: 6.5rem;
-      // max-width: 10rem;
-      // border: 2px solid red; //to be delete
       margin-top: 1.6rem;
-      // overflow: hidden;
 
       & img {
-        // max-width: 100%;
-        // height: auto;
         width: 7.5rem;
         height: 4.6rem;
         border-radius: 0.3rem;
-
-        // border-radius: 0.4rem;
       }
     }
 
@@ -498,78 +490,46 @@ $tabs-media: 767px;
     }
 
     &__comment {
-      // text-align: left;
-      // padding-bottom: 1.5rem;
-      // border-bottom: 2px solid #e1e1e1;
-
       &-conversation {
-        // margin-top: 2rem;
-        // display: flex;
         justify-content: space-between;
 
         > img {
-          // width: 4rem;
-          // height: 4rem;
-          // border-radius: 50%;
           margin-top: 2.2rem;
         }
         & form {
-          // display: flex;
           flex-direction: row;
-          // flex-grow: 1;
-          // align-items: center;
-          // max-width: 90%;
           gap: 1.5rem;
 
           > .conversationWraper {
             & textarea {
-              // font-family: "Avenir__Regular";
-              // border: 1.5px #e1e1e1 solid;
-              // border-radius: 0.4rem;
-              // background-color: #fafafa;
               height: 2.3rem;
-              // margin-bottom: 2rem;
-              // padding-left: 1rem;
-              // padding-top: 0.5rem;
 
               &::placeholder {
-                // color: #323232;
-                // font-size: 1.5rem;
               }
             }
 
             & label {
-              // font-family: "Avenir__Regular";
-              // font-size: 1.2rem;
-              // color: #afafaf;
-              // padding-bottom: 0.8rem;
-              // font-weight: 1000;
             }
           }
 
           & button {
-            // font-family: "Avenir__Regular";
-            // background-color: #0095ff;
-            // color: white;
-            // height: 4rem;
             height: 3rem;
             font-size: 1rem;
             max-width: 30%;
             margin-top: 2.5rem;
-            // border-radius: 4px;
-            // border: none;
-
-            // align-items: center;
 
             & img {
               height: 1rem;
-              // margin-left: 1rem;
               padding-right: 1rem;
             }
           }
         }
       }
     }
+  }
+
+  .videoList {
+    width: 70%;
   }
 }
 
@@ -583,11 +543,50 @@ $tabs-media: 767px;
   .left-container {
     display: flex;
     flex-direction: column;
+    height: 10rem;
+    width: 70%;
   }
 
   .nowVideo,
   .comment,
   .videoList {
     flex: 1;
+  }
+
+  .videoList {
+    margin-left: 0rem;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    border-left: 2px solid #e1e1e1;
+
+    > span {
+      font-size: 1rem;
+    }
+
+    &__wraper {
+      // display: flex;
+      // margin-bottom: 1rem;
+
+      &-left {
+        margin-top: 1rem;
+
+        //     & img {
+        //       width: 7.5rem;
+        //       height: 4.6rem;
+        //       border-radius: 0.3rem;
+        //     }
+      }
+
+      &-right {
+        > h3 {
+          font-size: 1rem;
+          width: 85%;
+        }
+
+        > p {
+          font-size: 1rem;
+        }
+      }
+    }
   }
 }
