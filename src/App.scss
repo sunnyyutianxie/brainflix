@@ -20,9 +20,24 @@ $tabs-media: 767px;
   }
 }
 
+@font-face {
+  font-family: "Avenir__Regular";
+  src: url(./assets/fonts/AvenirNextLTPro-Regular.otf);
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir__Bold";
+  src: url(./assets/fonts/AvenirNextLTPro-Bold.otf);
+  font-weight: 100;
+  font-style: normal;
+}
+
 //style start from below-----------------------------------------
 
 .App {
+  padding-top: 1rem;
   text-align: center;
 }
 
@@ -34,36 +49,88 @@ $tabs-media: 767px;
 
 .videoList {
   & img {
-    width: 5rem;
+    width: 12rem;
   }
 }
 
 .header {
   &__left {
-    width: 100%;
+    & img {
+      width: 12rem;
+    }
   }
 
   &__right {
     display: flex;
-    align-items: center;
     justify-content: flex-end;
+    margin-top: 1rem;
+    margin-right: 2.5rem;
 
     > input[type="text"] {
-      margin-right: 10px;
+      position: relative;
+      height: 3.5rem;
+      width: 35rem;
+      font-size: 1.2rem;
+      margin-right: 2rem;
+
+      border: 1.5px #e1e1e1 solid;
+      border-radius: 4px;
+      background-color: #fafafa;
+      padding-left: 3.5rem;
+
+      &::placeholder {
+        font-family: "Avenir__Regular";
+        color: black;
+      }
     }
 
     > button[type="submit"] {
-      order: -1;
-      margin-right: 10px;
+      position: relative;
+      top: 1rem;
+      left: 3rem;
+      height: 2rem;
+      z-index: 99;
+      border: none;
+      background-color: #fafafa;
+
+      & img {
+        width: 1.7rem;
+      }
     }
 
     > #mohan-img {
-      margin-right: 10px;
+      & img {
+        width: 3.8rem;
+        height: 3.8rem;
+        border-radius: 50%;
+      }
+    }
+  }
+  > button[type="button"] {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 2.4rem;
+
+    width: 89%;
+
+    background-color: #0095ff;
+    color: white;
+    height: 4rem;
+
+    font-size: 1.5rem;
+    border-radius: 4px;
+    border: none;
+
+    display: flex;
+    align-items: center;
+
+    & img {
+      margin-left: 1rem;
     }
 
-    > button[type="button"] {
-      width: 100%;
-      margin-top: 10px;
+    & p {
+      flex-grow: 1;
+      text-align: center;
     }
   }
 }
@@ -97,4 +164,84 @@ $tabs-media: 767px;
       font-size: 1rem;
     }
   }
+}
+
+// phone-width media display----------------------------------------------
+@include phone-width {
+}
+
+// pad-width media display--------------------------------
+@include pad-width {
+  .header {
+    display: flex;
+    margin-bottom: 2rem;
+    &__left {
+      margin-top: 0.5rem;
+      display: flex;
+      padding-left: 2rem;
+      & img {
+        width: 7rem;
+      }
+    }
+    &__right {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+
+      margin-top: 0;
+      margin-left: 4.5rem;
+      margin-right: 0;
+      > input[type="text"] {
+        width: 12rem;
+        height: 2.3rem;
+        padding-left: 2.5rem;
+
+        &::placeholder {
+          font-size: 0.9rem;
+        }
+      }
+
+      > button[type="submit"] {
+        top: 0.5rem;
+        left: 2.5rem;
+        & img {
+          width: 1.3rem;
+        }
+      }
+
+      > #mohan-img {
+        padding-left: 11rem;
+
+        & img {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+    }
+    > button[type="button"] {
+      position: absolute;
+      top: 1rem;
+      right: 6.2rem;
+
+      width: 10rem;
+      margin-top: 0;
+      margin-left: 0;
+      height: 2.7rem;
+
+      & img {
+        margin: 0;
+        height: 1.35rem;
+        padding-left: 0.2rem;
+      }
+
+      & p {
+        font-size: 0.9rem;
+        padding-right: 2rem;
+      }
+    }
+  }
+}
+
+// pc-width media display--------------------------------
+@include pc-width {
 }

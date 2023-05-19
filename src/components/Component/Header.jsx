@@ -17,14 +17,15 @@ function Header() {
           <img src={searchLogo} alt="" />
         </button>
         <input type="text" placeholder="Search" />
-        <button type="button">
-          <img src={uploadButton} alt="" />
-          UPLOAD
-        </button>
+
         <div id="mohan-img">
           <img src={headerImg} alt="" />
         </div>
       </div>
+      <button type="button">
+        <img src={uploadButton} alt="" />
+        <p>UPLOAD</p>
+      </button>
     </div>
   );
 }
