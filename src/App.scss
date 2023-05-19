@@ -175,10 +175,10 @@ $tabs-media: 767px;
       display: flex;
       font-size: 1.1rem;
 
-      & img {
-        padding-right: 1rem;
-        width: 2rem;
-      }
+      // & img {
+      //   padding-right: 1rem;
+      //   width: 2rem;
+      // }
     }
   }
 
@@ -211,29 +211,33 @@ $tabs-media: 767px;
         display: flex;
         flex-direction: column;
         flex-grow: 1;
+        > .conversationWraper {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          & textarea {
+            font-family: "Avenir__Regular";
+            border: 1.5px #e1e1e1 solid;
+            border-radius: 0.4rem;
+            background-color: #fafafa;
+            height: 11rem;
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            padding-top: 0.5rem;
 
-        & textarea {
-          font-family: "Avenir__Regular";
-          border: 1.5px #e1e1e1 solid;
-          border-radius: 0.4rem;
-          background-color: #fafafa;
-          height: 11rem;
-          margin-bottom: 2rem;
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-
-          &::placeholder {
-            color: #323232;
-            font-size: 1.5rem;
+            &::placeholder {
+              color: #323232;
+              font-size: 1.5rem;
+            }
           }
-        }
 
-        & label {
-          font-family: "Avenir__Regular";
-          font-size: 1.2rem;
-          color: #afafaf;
-          padding-bottom: 0.8rem;
-          font-weight: 1000;
+          & label {
+            font-family: "Avenir__Regular";
+            font-size: 1.2rem;
+            color: #afafaf;
+            padding-bottom: 0.8rem;
+            font-weight: 1000;
+          }
         }
 
         & button {
@@ -251,7 +255,7 @@ $tabs-media: 767px;
 
           & img {
             margin-left: 1rem;
-            padding-right: 6rem;
+            padding-right: 16vw;
           }
         }
       }
@@ -322,15 +326,20 @@ $tabs-media: 767px;
     margin-bottom: 1rem;
 
     &-left {
-      height: 6.5rem;
-      max-width: 10rem;
-      border: 2px solid red;
-      margin-top: 1.5rem;
-      overflow: hidden;
+      // height: 6.5rem;
+      // max-width: 10rem;
+      // border: 2px solid red; //to be delete
+      margin-top: 1.6rem;
+      // overflow: hidden;
 
       & img {
-        max-width: 100%;
-        height: auto;
+        // max-width: 100%;
+        // height: auto;
+        width: 7.5rem;
+        height: 4.6rem;
+        border-radius: 0.3rem;
+
+        // border-radius: 0.4rem;
       }
     }
 
@@ -339,7 +348,7 @@ $tabs-media: 767px;
       text-align: left;
       padding-right: 1rem;
       > h3 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
 
       > p {
@@ -351,8 +360,22 @@ $tabs-media: 767px;
 
 // phone-width media display----------------------------------------------
 @include phone-width {
-  .nowVideo__info-head-2 {
-    margin-top: 2.5rem;
+  .nowVideo {
+    &__info {
+      &-head {
+        &-2 {
+          margin-top: 2.5rem;
+        }
+
+        &-3,
+        &-4 {
+          & img {
+            padding-right: 1rem;
+            width: 2rem;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -434,6 +457,7 @@ $tabs-media: 767px;
       }
 
       &-head {
+        justify-content: space-between;
         > .wraper1 {
           display: flex;
         }
@@ -445,17 +469,105 @@ $tabs-media: 767px;
           font-size: 0.8rem;
         }
         &-2 {
-          padding-left: 1rem;
+          padding-left: 1.5rem;
           & h3 {
             font-size: 1.1rem;
           }
         }
 
-        // &-3 {
-        //   > img {
-        //     width: 1rem;
-        //   }
-        // }
+        &-3 {
+          margin-right: 1.5rem;
+        }
+
+        &-3,
+        &-4 {
+          & img {
+            padding-right: 0.3rem;
+            width: 1rem;
+          }
+
+          & h3 {
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+
+    &__description {
+      font-size: 1rem;
+    }
+
+    &__comment {
+      // text-align: left;
+      // padding-bottom: 1.5rem;
+      // border-bottom: 2px solid #e1e1e1;
+
+      &-conversation {
+        // margin-top: 2rem;
+        // display: flex;
+        justify-content: space-between;
+
+        > img {
+          // width: 4rem;
+          // height: 4rem;
+          // border-radius: 50%;
+          margin-top: 2.2rem;
+        }
+        & form {
+          // display: flex;
+          flex-direction: row;
+          // flex-grow: 1;
+          // align-items: center;
+          // max-width: 90%;
+          gap: 1.5rem;
+
+          > .conversationWraper {
+            & textarea {
+              // font-family: "Avenir__Regular";
+              // border: 1.5px #e1e1e1 solid;
+              // border-radius: 0.4rem;
+              // background-color: #fafafa;
+              height: 2.3rem;
+              // margin-bottom: 2rem;
+              // padding-left: 1rem;
+              // padding-top: 0.5rem;
+
+              &::placeholder {
+                // color: #323232;
+                // font-size: 1.5rem;
+              }
+            }
+
+            & label {
+              // font-family: "Avenir__Regular";
+              // font-size: 1.2rem;
+              // color: #afafaf;
+              // padding-bottom: 0.8rem;
+              // font-weight: 1000;
+            }
+          }
+
+          & button {
+            // font-family: "Avenir__Regular";
+            // background-color: #0095ff;
+            // color: white;
+            // height: 4rem;
+            height: 3rem;
+            font-size: 1rem;
+            max-width: 30%;
+            margin-top: 2.5rem;
+            // border-radius: 4px;
+            // border: none;
+
+            // align-items: center;
+
+            & img {
+              height: 1rem;
+              // margin-left: 1rem;
+              padding-right: 1rem;
+            }
+          }
+        }
       }
     }
   }

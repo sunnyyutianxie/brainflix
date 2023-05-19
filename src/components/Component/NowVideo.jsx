@@ -52,9 +52,14 @@ function NowVideo(props) {
               props.addComment(event.target.name.value);
             }}
           >
-            <label>JOIN THE CONVERSATION</label>
-            <textarea name="name" type="text" placeholder="Add a new comment" />
-
+            <div className="conversationWraper">
+              <label>JOIN THE CONVERSATION</label>
+              <textarea
+                name="name"
+                type="text"
+                placeholder="Add a new comment"
+              />
+            </div>
             <button>
               <img src={commentIcon} alt="" />
               COMMENT
