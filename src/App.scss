@@ -583,6 +583,11 @@ $tabs-media: 767px;
     flex: 1;
   }
 
+  .nowVideo__info h1 {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
   .videoList {
     margin-left: 0rem;
     padding-top: 2rem;
