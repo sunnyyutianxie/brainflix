@@ -23,8 +23,8 @@ $tabs-media: 767px;
 @font-face {
   font-family: "Avenir__Regular";
   src: url(./assets/fonts/AvenirNextLTPro-Regular.otf);
-  font-weight: 100;
   font-style: normal;
+  font-weight: 100;
 }
 
 @font-face {
@@ -40,6 +40,7 @@ $tabs-media: 767px;
   padding-top: 1rem;
   text-align: center;
   font-family: "Avenir__Regular";
+  color: #323232;
 }
 
 #mohan-img {
@@ -176,6 +177,81 @@ $tabs-media: 767px;
       & img {
         padding-right: 1rem;
         width: 2rem;
+      }
+    }
+  }
+
+  &__description {
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__comment {
+    text-align: left;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e1e1e1;
+
+    &-conversation {
+      margin-top: 2rem;
+      display: flex;
+
+      > img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        margin-top: 2.2rem;
+        margin-right: 2rem;
+      }
+
+      & form {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        & textarea {
+          font-family: "Avenir__Regular";
+          border: 1.5px #e1e1e1 solid;
+          border-radius: 0.4rem;
+          background-color: #fafafa;
+          height: 11rem;
+          margin-bottom: 2rem;
+          padding-left: 1rem;
+          padding-top: 0.5rem;
+
+          &::placeholder {
+            color: #323232;
+            font-size: 1.5rem;
+          }
+        }
+
+        & label {
+          font-family: "Avenir__Regular";
+          font-size: 1.2rem;
+          color: #afafaf;
+          padding-bottom: 0.8rem;
+          font-weight: 1000;
+        }
+
+        & button {
+          font-family: "Avenir__Regular";
+          width: 100%;
+          background-color: #0095ff;
+          color: white;
+          height: 4rem;
+          font-size: 1.5rem;
+          border-radius: 4px;
+          border: none;
+
+          display: flex;
+          align-items: center;
+
+          & img {
+            margin-left: 1rem;
+            padding-right: 6rem;
+          }
+        }
       }
     }
   }
