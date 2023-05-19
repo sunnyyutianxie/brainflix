@@ -166,7 +166,7 @@ $tabs-media: 767px;
       text-align: left;
       color: #afafaf;
       font-size: 1.1rem;
-      margin-top: 2.5rem;
+      // margin-top: 2.5rem;
     }
 
     &-3,
@@ -351,6 +351,9 @@ $tabs-media: 767px;
 
 // phone-width media display----------------------------------------------
 @include phone-width {
+  .nowVideo__info-head-2 {
+    margin-top: 2.5rem;
+  }
 }
 
 // pad-width media display--------------------------------
@@ -420,6 +423,22 @@ $tabs-media: 767px;
       & p {
         font-size: 0.9rem;
         padding-right: 1rem;
+      }
+    }
+  }
+
+  .nowVideo {
+    &__info {
+      &-head {
+        > .wraper1 {
+          display: flex;
+        }
+
+        > .wraper2 {
+          display: flex;
+        }
+        &-2 {
+        }
       }
     }
   }
