@@ -539,13 +539,42 @@ $tabs-media: 767px;
   .container {
     display: flex;
     flex-direction: row;
+
+    & .left-container {
+      display: flex;
+      flex-direction: column;
+
+      // height: 10rem;
+      width: 70%;
+
+      & .nowVideo {
+        margin-right: 0;
+        &__info-head {
+          padding-right: 2rem;
+        }
+
+        &__description {
+          padding-right: 2rem;
+        }
+
+        &__comment-conversation {
+          padding-right: 2rem;
+        }
+      }
+    }
+    & #nameChanger {
+      font-size: 1.2rem;
+    }
+    & #dateChanger {
+      font-size: 1.2rem;
+    }
   }
 
-  .left-container {
-    display: flex;
-    flex-direction: column;
-    height: 10rem;
-    width: 70%;
+  .comment {
+    margin-right: 0;
+    &__sole {
+      padding-right: 2rem;
+    }
   }
 
   .nowVideo,
