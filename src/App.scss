@@ -183,9 +183,10 @@ $tabs-media: 767px;
 
   &__description {
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
+    line-height: 1.9rem;
   }
 
   &__comment {
@@ -307,8 +308,43 @@ $tabs-media: 767px;
 }
 
 .videoList {
-  & img {
-    width: 12rem;
+  margin-left: 2rem;
+  > span {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #afafaf;
+    display: flex;
+  }
+
+  &__wraper {
+    display: flex;
+    margin-bottom: 1rem;
+
+    &-left {
+      height: 6.5rem;
+      max-width: 10rem;
+      border: 2px solid red;
+      margin-top: 1.5rem;
+      overflow: hidden;
+
+      & img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &-right {
+      padding-left: 2rem;
+      text-align: left;
+      padding-right: 1rem;
+      > h3 {
+        font-size: 1.5rem;
+      }
+
+      > p {
+        font-size: 1.2rem;
+      }
+    }
   }
 }
 
@@ -382,7 +418,7 @@ $tabs-media: 767px;
 
       & p {
         font-size: 0.9rem;
-        padding-right: 2rem;
+        padding-right: 1rem;
       }
     }
   }

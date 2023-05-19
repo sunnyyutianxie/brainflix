@@ -2,6 +2,7 @@ function VideoList(props) {
   //   console.log(props);
   return (
     <div className="videoList">
+      <span>NEXT VIDEOS</span>
       {props.videos
         .filter((video) => {
           //   console.log(video.id);
@@ -15,9 +16,15 @@ function VideoList(props) {
               props.handleVideoClick(video.id);
             }}
           >
-            <img src={video.image} alt="" />
-            <h3>{video.title}</h3>
-            <p>{video.channel}</p>
+            <div className="videoList__wraper">
+              <div className="videoList__wraper-left">
+                <img src={video.image} alt="" />
+              </div>
+              <div className="videoList__wraper-right">
+                <h3>{video.title}</h3>
+                <p>{video.channel}</p>
+              </div>
+            </div>
           </div>
         ))}
     </div>
