@@ -154,12 +154,13 @@ $tabs-media: 767px;
     border-bottom: 2px solid #e1e1e1;
 
     > .wraper1 {
-      padding-right: 10rem;
+      min-width: 8.5rem;
+      padding-right: 9rem;
     }
 
-    // &-1 {
-    //   padding-bottom: 0.1rem;
-    // }
+    &-1 {
+      word-break: break-all;
+    }
 
     &-2 {
       text-align: left;
