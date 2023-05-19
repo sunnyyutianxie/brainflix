@@ -5,6 +5,7 @@ import Header from "./components/Component/Header";
 import VideoList from "./components/Component/VideoList";
 import NowVideo from "./components/Component/NowVideo";
 import CommentList from "./components/Component/CommentList";
+import VideoPlaying from "./components/Component/VideoPlaying";
 
 function App() {
   const [videos, setVideos] = useState(videoDetails);
@@ -32,18 +33,25 @@ function App() {
       {/* Header Section */}
       <Header />
 
-      {/* Now Video Section */}
-      <NowVideo nowVideo={nowVideo} addComment={addComment} />
+      {/* Video Playing Section */}
+      <VideoPlaying nowVideo={nowVideo} />
 
-      {/* Comment Section */}
-      <CommentList comments={nowVideo.comments} />
+      <div class="container">
+        <div class="left-container">
+          {/* Now Video Section */}
+          <NowVideo nowVideo={nowVideo} addComment={addComment} />
 
-      {/* Next Video Section */}
-      <VideoList
-        videos={videos}
-        nowVideo={nowVideo}
-        handleVideoClick={handleVideoClick}
-      />
+          {/* Comment Section */}
+          <CommentList comments={nowVideo.comments} />
+        </div>
+
+        {/* Next Video Section */}
+        <VideoList
+          videos={videos}
+          nowVideo={nowVideo}
+          handleVideoClick={handleVideoClick}
+        />
+      </div>
     </div>
   );
 }

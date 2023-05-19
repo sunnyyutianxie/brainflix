@@ -39,17 +39,12 @@ $tabs-media: 767px;
 .App {
   padding-top: 1rem;
   text-align: center;
+  font-family: "Avenir__Regular";
 }
 
 #mohan-img {
   & img {
     height: 2rem;
-  }
-}
-
-.videoList {
-  & img {
-    width: 12rem;
   }
 }
 
@@ -135,6 +130,57 @@ $tabs-media: 767px;
   }
 }
 
+.videoPlaying {
+  & video {
+    width: 100%;
+  }
+}
+
+.nowVideo {
+  margin: 0 2.4rem;
+  &__info {
+    & h1 {
+      font-size: 3rem;
+      text-align: left;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid #e1e1e1;
+    }
+  }
+
+  .nowVideo__info-head {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid #e1e1e1;
+
+    > .wraper1 {
+      padding-right: 10rem;
+    }
+
+    // &-1 {
+    //   padding-bottom: 0.1rem;
+    // }
+
+    &-2 {
+      text-align: left;
+      color: #afafaf;
+      font-size: 1.1rem;
+      margin-top: 2.5rem;
+    }
+
+    &-3,
+    &-4 {
+      color: #afafaf;
+      display: flex;
+      font-size: 1.1rem;
+
+      & img {
+        padding-right: 1rem;
+        width: 2rem;
+      }
+    }
+  }
+}
+
 .comment {
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -163,6 +209,12 @@ $tabs-media: 767px;
     & p {
       font-size: 1rem;
     }
+  }
+}
+
+.videoList {
+  & img {
+    width: 12rem;
   }
 }
 
@@ -244,4 +296,19 @@ $tabs-media: 767px;
 
 // pc-width media display--------------------------------
 @include pc-width {
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .left-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nowVideo,
+  .comment,
+  .videoList {
+    flex: 1;
+  }
 }
