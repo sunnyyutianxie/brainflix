@@ -575,6 +575,12 @@ $tabs-media: 767px;
     &__sole {
       padding-right: 2rem;
     }
+
+    &__sole {
+      &:last-of-type {
+        border: none;
+      }
+    }
   }
 
   .nowVideo,
