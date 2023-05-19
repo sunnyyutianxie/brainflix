@@ -262,7 +262,7 @@ $tabs-media: 767px;
   margin-bottom: 2rem;
   margin-left: 2rem;
   margin-right: 2rem;
-  // font-family: "Avenir__Regular";
+  font-family: "Avenir__Regular";
 
   &__sole {
     display: flex;
@@ -277,13 +277,31 @@ $tabs-media: 767px;
       margin-right: 2rem;
     }
 
-    & h3 {
-      font-size: 1rem;
-      color: #323232;
-    }
+    &__rightblock {
+      width: 100%;
+      word-break: break-word;
+      text-align: left;
 
-    & p {
-      font-size: 1rem;
+      &__top {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.5rem;
+        padding-bottom: 1rem;
+
+        #nameChanger {
+          color: #323232;
+          font-weight: 700;
+        }
+
+        #dateChanger {
+          color: #afafaf;
+        }
+      }
+
+      #sizeChanger {
+        font-size: 1.2rem;
+        line-height: 2rem;
+      }
     }
   }
 }
