@@ -152,10 +152,11 @@ $tabs-media: 767px;
     display: flex;
     flex-direction: row;
     border-bottom: 2px solid #e1e1e1;
+    justify-content: space-between;
 
     > .wraper1 {
       min-width: 8.5rem;
-      padding-right: 9rem;
+      padding-right: 5rem;
     }
 
     &-1 {
