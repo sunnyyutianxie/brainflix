@@ -429,6 +429,10 @@ $tabs-media: 767px;
 
   .nowVideo {
     &__info {
+      & h1 {
+        font-size: 2.1rem;
+      }
+
       &-head {
         > .wraper1 {
           display: flex;
@@ -437,8 +441,21 @@ $tabs-media: 767px;
         > .wraper2 {
           display: flex;
         }
-        &-2 {
+        &-1 {
+          font-size: 0.8rem;
         }
+        &-2 {
+          padding-left: 1rem;
+          & h3 {
+            font-size: 1.1rem;
+          }
+        }
+
+        // &-3 {
+        //   > img {
+        //     width: 1rem;
+        //   }
+        // }
       }
     }
   }
