@@ -71,6 +71,7 @@ function App() {
             }
           />
           <Route path="/home" element={<Navigate to="/" />} />
+          <Route path="/video" element={<Navigate to="/" />} />
           <Route path="/uploads" element={<UploadPage />} />
         </Routes>
       </div>

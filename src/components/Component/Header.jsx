@@ -28,7 +28,7 @@ function Header() {
       </div>
       <button
         onClick={() => {
-          console.log("here");
+          // console.log("here");
           navigate("/uploads");
         }}
         type="button"
