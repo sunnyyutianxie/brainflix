@@ -2,16 +2,20 @@ import BrainFlixLogo from "../../assets/Logo/BrainFlix-logo.svg";
 import searchLogo from "../../assets/Icons/search.svg";
 import uploadButton from "../../assets/Icons/upload.svg";
 import headerImg from "../../assets/images/Mohan-muruge.jpg";
+import { Link, useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <div className="header">
       <div className="header__left">
-        <a>
+        <Link to="/">
           <img src={BrainFlixLogo} alt="" />
-        </a>
+        </Link>
+        {/* <a>
+          <img src={BrainFlixLogo} alt="" />
+        </a> */}
       </div>
-
       <div className="header__right">
         <button type="submit">
           <img src={searchLogo} alt="" />
@@ -22,7 +26,13 @@ function Header() {
           <img src={headerImg} alt="" />
         </div>
       </div>
-      <button type="button">
+      <button
+        onClick={() => {
+          console.log("here");
+          navigate("/uploads");
+        }}
+        type="button"
+      >
         <img src={uploadButton} alt="" />
         <p>UPLOAD</p>
       </button>
