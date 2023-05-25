@@ -8,8 +8,8 @@ import { useParams } from "react-router-dom";
 import videoDetails from "../../data/video-details.json";
 
 function HomePage() {
-  const [videos, setVideos] = useState(videoDetails);
-  const [nowVideo, setNowVideo] = useState(videos[0]);
+  const [videos, setVideos] = useState([]);
+  const [nowVideo, setNowVideo] = useState({});
   const handleVideoClick = (id) => {
     const foundVideo = videos.find((video) => video.id === id);
     setNowVideo(foundVideo);
@@ -23,15 +23,14 @@ function HomePage() {
         "https://project-2-api.herokuapp.com/videos/?api_key=%3Cf61e3f42-45c7-4ae9-9acd-1525652bf2fd%3E"
       )
       .then((response) => {
-        // console.log("this");
-        // console.log(response.data);
+        console.log("this");
+        console.log(response.data);
         setVideos(response.data);
       })
       .catch((err) => console.log(err));
   }, []);
 
-  // console.log(videos);
-  // console.log(nowVideo);
+  console.log("new", videos);
 
   useEffect(() => {
     if (params.id) {
@@ -41,12 +40,25 @@ function HomePage() {
         )
         .then((response) => {
           console.log("that");
-          console.log(response.data);
+          // console.log(response.data);
+          setNowVideo(response.data);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      axios
+        .get(
+          `https://project-2-api.herokuapp.com/videos/84e96018-4022-434e-80bf-000ce4cd12b8/?api_key=%3Cf61e3f42-45c7-4ae9-9acd-1525652bf2fd%3E`
+        )
+        .then((response) => {
+          console.log("that");
+          // console.log(response.data);
           setNowVideo(response.data);
         })
         .catch((err) => console.log(err));
     }
   }, [params.id]);
+
+  console.log("newnow", nowVideo);
 
   //TODO: make it functional, update the comment
   function addComment(content) {
@@ -61,7 +73,7 @@ function HomePage() {
     console.log(copy);
   }
 
-  return (
+  return nowVideo && videos ? (
     <div>
       {/* Video Playing Section  */}
       <VideoPlaying nowVideo={nowVideo} />
@@ -83,7 +95,7 @@ function HomePage() {
         />
       </div>
     </div>
-  );
+  ) : null;
 }
 
 export default HomePage;

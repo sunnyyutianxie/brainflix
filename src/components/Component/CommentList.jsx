@@ -5,7 +5,7 @@ function CommentList(props) {
   // console.log(props);
   return (
     <div className="comment">
-      {props.comments.map((comment) => (
+      {props.comments?.map((comment) => (
         <div className="comment__sole" key={comment.id}>
           <img src={commentImg} alt="" />
           <div className="comment__sole__rightblock">

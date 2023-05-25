@@ -41,7 +41,7 @@ function NowVideo(props) {
       </div>
       <div className="nowVideo__comment">
         <div>
-          <h2>{props.nowVideo.comments.length} Comments</h2>
+          <h2>{props.nowVideo.comments?.length} Comments</h2>
         </div>
         <div className="nowVideo__comment-conversation">
           <img src={headerImg} alt="" />
