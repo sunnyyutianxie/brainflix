@@ -12,7 +12,7 @@ function VideoList(props) {
           return video.id !== props.nowVideo.id;
         })
         .map((video) => (
-          <Link to={`/videos/${video.id}`}>
+          <Link className="link-no-style" to={`/videos/${video.id}`}>
             <div
               key={video.id}
               onClick={() => {

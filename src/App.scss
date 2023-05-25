@@ -49,6 +49,11 @@ $tabs-media: 767px;
   }
 }
 
+.link-no-style {
+  text-decoration: none;
+  color: inherit;
+}
+
 .header {
   &__left {
     & img {
