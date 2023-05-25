@@ -5,7 +5,6 @@ import VideoList from "./VideoList";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import videoDetails from "../../data/video-details.json";
 
 function HomePage() {
   const [videos, setVideos] = useState([]);
@@ -73,7 +72,7 @@ function HomePage() {
     console.log(copy);
   }
 
-  return nowVideo && videos ? (
+  return nowVideo.video && videos ? (
     <div>
       {/* Video Playing Section  */}
       <VideoPlaying nowVideo={nowVideo} />
