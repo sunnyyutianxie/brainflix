@@ -1,21 +1,13 @@
-import { useState, useEffect } from "react";
-import videoDetails from "./data/video-details.json";
+import { useEffect } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/Component/Header";
 import axios from "axios";
 import HomePage from "./components/Component/HomePage";
 import UploadPage from "./components/Component/UploadPage";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function App() {
-  const [videos, setVideos] = useState(videoDetails);
-  const [nowVideo, setNowVideo] = useState(videos[0]);
-  const handleVideoClick = (id) => {
-    const foundVideo = videos.find((video) => video.id === id);
-    setNowVideo(foundVideo);
-  };
-
   const params = useParams();
 
   useEffect(() => {
@@ -43,37 +35,13 @@ function App() {
     }
   }, [params.id]);
 
-  //TODO: make it functional, update the comment
-  function addComment(content) {
-    let temArray = [
-      {
-        comment: content,
-        name: "Unknown",
-      },
-    ];
-    let newArray = nowVideo.comments.concat(temArray);
-    let copy = newArray.slice();
-    console.log(copy);
-  }
-
   return (
     <BrowserRouter>
       <div className="App">
         <Header />
 
         <Routes>
-          <Route
-            path="/"
-            element={
-              <HomePage
-                videos={videos}
-                nowVideo={nowVideo}
-                addComment={addComment}
-                comments={nowVideo.comments}
-                handleVideoClick={handleVideoClick}
-              />
-            }
-          />
+          <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<Navigate to="/" />} />
           <Route path="/video" element={<Navigate to="/" />} />
           <Route path="/uploads" element={<UploadPage />} />
