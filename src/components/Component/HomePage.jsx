@@ -23,20 +23,26 @@ function HomePage() {
         "https://project-2-api.herokuapp.com/videos/?api_key=%3Cf61e3f42-45c7-4ae9-9acd-1525652bf2fd%3E"
       )
       .then((response) => {
+        // console.log("this");
         // console.log(response.data);
+        setVideos(response.data);
       })
       .catch((err) => console.log(err));
   }, []);
 
+  // console.log(videos);
+  // console.log(nowVideo);
+
   useEffect(() => {
-    // console.log(params.id);
     if (params.id) {
       axios
         .get(
           `https://project-2-api.herokuapp.com/videos/${params.id}/?api_key=%3Cf61e3f42-45c7-4ae9-9acd-1525652bf2fd%3E`
         )
         .then((response) => {
-          console.log(response);
+          console.log("that");
+          console.log(response.data);
+          setNowVideo(response.data);
         })
         .catch((err) => console.log(err));
     }
