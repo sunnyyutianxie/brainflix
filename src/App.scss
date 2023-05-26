@@ -43,6 +43,10 @@ $tabs-media: 767px;
   color: #323232;
 }
 
+body {
+  min-width: 400px;
+}
+
 #mohan-img {
   & img {
     height: 2rem;
