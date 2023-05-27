@@ -2,7 +2,6 @@ import { convertDate } from "./convertDate.js";
 import commentImg from "../../assets/images/comment profile pic.png";
 
 function CommentList(props) {
-  // console.log(props);
   return (
     <div className="comment">
       {props.comments?.map((comment) => (
