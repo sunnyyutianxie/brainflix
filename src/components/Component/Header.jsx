@@ -12,9 +12,6 @@ function Header() {
         <Link to="/">
           <img src={BrainFlixLogo} alt="" />
         </Link>
-        {/* <a>
-          <img src={BrainFlixLogo} alt="" />
-        </a> */}
       </div>
       <div className="header__right">
         <button type="submit">
@@ -28,7 +25,6 @@ function Header() {
       </div>
       <button
         onClick={() => {
-          // console.log("here");
           navigate("/uploads");
         }}
         type="button"

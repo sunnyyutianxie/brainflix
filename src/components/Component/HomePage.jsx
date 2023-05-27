@@ -6,21 +6,16 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
+let apiKey = "?api_key=<f61e3f42-45c7-4ae9-9acd-1525652bf2fd>";
+
 function HomePage() {
   const [videos, setVideos] = useState([]);
   const [nowVideo, setNowVideo] = useState({});
-  const handleVideoClick = (id) => {
-    const foundVideo = videos.find((video) => video.id === id);
-    setNowVideo(foundVideo);
-  };
-
   const params = useParams();
 
   function getById(passID) {
     axios
-      .get(
-        `https://project-2-api.herokuapp.com/videos/${passID}/?api_key=%3Cf61e3f42-45c7-4ae9-9acd-1525652bf2fd%3E`
-      )
+      .get(`https://project-2-api.herokuapp.com/videos/${passID}/${apiKey}`)
       .then((response) => {
         setNowVideo(response.data);
       })
@@ -29,9 +24,7 @@ function HomePage() {
 
   useEffect(() => {
     axios
-      .get(
-        "https://project-2-api.herokuapp.com/videos/?api_key=%3Cf61e3f42-45c7-4ae9-9acd-1525652bf2fd%3E"
-      )
+      .get(`https://project-2-api.herokuapp.com/videos/${apiKey}`)
       .then((response) => {
         setVideos(response.data);
       })
@@ -41,25 +34,8 @@ function HomePage() {
   useEffect(() => {
     if (params.id) {
       getById(params.id);
-      // axios
-      //   .get(
-      //     `https://project-2-api.herokuapp.com/videos/${params.id}/?api_key=%3Cf61e3f42-45c7-4ae9-9acd-1525652bf2fd%3E`
-      //   )
-      //   .then((response) => {
-      //     setNowVideo(response.data);
-      //   })
-      //   .catch((err) => console.log(err));
     } else {
       getById("84e96018-4022-434e-80bf-000ce4cd12b8");
-      // axios
-      //   .get(
-      //     `https://project-2-api.herokuapp.com/videos/84e96018-4022-434e-80bf-000ce4cd12b8/?api_key=%3Cf61e3f42-45c7-4ae9-9acd-1525652bf2fd%3E`
-      //   )
-      //   .then((response) => {
-      //     console.log("that");
-      //     setNowVideo(response.data);
-      //   })
-      //   .catch((err) => console.log(err));
     }
   }, [params.id]);
 
@@ -91,11 +67,7 @@ function HomePage() {
         </div>
 
         {/* Next Video Section*/}
-        <VideoList
-          videos={videos}
-          nowVideo={nowVideo}
-          handleVideoClick={handleVideoClick}
-        />
+        <VideoList videos={videos} nowVideo={nowVideo} />
       </div>
     </div>
   ) : null;

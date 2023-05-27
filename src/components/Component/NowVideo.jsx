@@ -4,8 +4,6 @@ import likesIcon from "../../assets/Icons/likes.svg";
 import commentIcon from "../../assets/Icons/add_comment.svg";
 import { convertDate } from "./convertDate.js";
 
-let apiKey = "?api_key=<f61e3f42-45c7-4ae9-9acd-1525652bf2fd>";
-
 function NowVideo(props) {
   return (
     <div className="nowVideo">
