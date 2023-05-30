@@ -1,6 +1,7 @@
 import uploadImg from "../../assets/images/Upload-video-preview.jpg";
 import publishButton from "../../assets/Icons/publish.svg";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function UploadPage() {
   const navigate = useNavigate();
@@ -8,7 +9,27 @@ function UploadPage() {
   return (
     <div id="uploadBlock">
       <h1 className="uploadVideo__title">Upload Video</h1>
-      <form action="">
+      <form
+        action=""
+        onSubmit={(event) => {
+          event.preventDefault();
+          const title = event.target.elements.title.value;
+          const description = event.target.elements.description.value;
+
+          const videoData = {
+            title: title,
+            description: description,
+          };
+
+          try {
+            axios.post("http://localhost:8080/videos", videoData);
+            alert("published");
+            navigate("/");
+          } catch (error) {
+            console.error(error);
+          }
+        }}
+      >
         <div className="uploadVideo">
           <div className="uploadVideo__left">
             <div className="uploadVideo__left-thumbnail">
@@ -44,14 +65,7 @@ function UploadPage() {
           >
             CANCEL
           </button>
-          <button
-            id="publishButton"
-            onClick={(event) => {
-              event.preventDefault();
-              alert("published");
-              navigate("/");
-            }}
-          >
+          <button id="publishButton">
             <img src={publishButton} alt="" />
             <p>PUBLISH</p>
           </button>

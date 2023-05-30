@@ -15,7 +15,8 @@ function HomePage() {
 
   function getById(passID) {
     axios
-      .get(`https://project-2-api.herokuapp.com/videos/${passID}/${apiKey}`)
+      // .get(`https://project-2-api.herokuapp.com/videos/${passID}/${apiKey}`)
+      .get(`http://localhost:8080/videos/${passID}`)
       .then((response) => {
         setNowVideo(response.data);
       })
@@ -24,7 +25,8 @@ function HomePage() {
 
   useEffect(() => {
     axios
-      .get(`https://project-2-api.herokuapp.com/videos/${apiKey}`)
+      // .get(`https://project-2-api.herokuapp.com/videos/${apiKey}`)
+      .get("http://localhost:8080/videos")
       .then((response) => {
         setVideos(response.data);
       })
