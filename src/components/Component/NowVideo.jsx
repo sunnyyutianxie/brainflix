@@ -48,7 +48,7 @@ function NowVideo(props) {
             action=""
             onSubmit={(event) => {
               event.preventDefault();
-              const comment = event.target.name.value;
+              let comment = event.target.name.value;
               const commentData = {
                 comment: comment,
               };
@@ -62,6 +62,7 @@ function NowVideo(props) {
                   .then(() => {
                     props.getById(props.nowVideo.id);
                     alert("posted");
+                    document.getElementById("commentTextarea").value = "";
                   });
               } catch (error) {
                 console.error(error);
@@ -71,6 +72,7 @@ function NowVideo(props) {
             <div className="conversationWraper">
               <label>JOIN THE CONVERSATION</label>
               <textarea
+                id="commentTextarea"
                 name="name"
                 type="text"
                 placeholder="Add a new comment"
