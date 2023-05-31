@@ -3,6 +3,7 @@ import viewsIcon from "../../assets/Icons/views.svg";
 import likesIcon from "../../assets/Icons/likes.svg";
 import commentIcon from "../../assets/Icons/add_comment.svg";
 import { convertDate } from "./convertDate.js";
+import axios from "axios";
 
 function NowVideo(props) {
   return (
@@ -47,7 +48,24 @@ function NowVideo(props) {
             action=""
             onSubmit={(event) => {
               event.preventDefault();
-              props.addComment(event.target.name.value);
+              const comment = event.target.name.value;
+              const commentData = {
+                comment: comment,
+              };
+
+              try {
+                axios
+                  .post(
+                    `http://localhost:8080/videos/${props.nowVideo.id}/comments`,
+                    commentData
+                  )
+                  .then(() => {
+                    props.getById(props.nowVideo.id);
+                    alert("posted");
+                  });
+              } catch (error) {
+                console.error(error);
+              }
             }}
           >
             <div className="conversationWraper">

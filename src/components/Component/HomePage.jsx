@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-let apiKey = "?api_key=<f61e3f42-45c7-4ae9-9acd-1525652bf2fd>";
+// let apiKey = "?api_key=<f61e3f42-45c7-4ae9-9acd-1525652bf2fd>";
 
 function HomePage() {
   const [videos, setVideos] = useState([]);
@@ -41,19 +41,6 @@ function HomePage() {
     }
   }, [params.id]);
 
-  //TODO: make it functional, update the comment
-  function addComment(content) {
-    let temArray = [
-      {
-        comment: content,
-        name: "Unknown",
-      },
-    ];
-    let newArray = nowVideo.comments.concat(temArray);
-    let copy = newArray.slice();
-    console.log(copy);
-  }
-
   return nowVideo.video && videos ? (
     <div>
       {/* Video Playing Section  */}
@@ -62,7 +49,7 @@ function HomePage() {
       <div class="container">
         <div class="left-container">
           {/* Now Video Section */}
-          <NowVideo nowVideo={nowVideo} addComment={addComment} />
+          <NowVideo nowVideo={nowVideo} getById={getById} />
 
           {/* Comment Section */}
           <CommentList comments={nowVideo.comments} />
