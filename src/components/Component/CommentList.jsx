@@ -37,7 +37,7 @@ function CommentList(props) {
                     axios
                       .delete(
                         `http://localhost:8080/videos/${props.nowVideo.id}/comments`,
-                        commentData
+                        { data: commentData }
                       )
                       .then(() => {
                         props.getById(props.nowVideo.id);
