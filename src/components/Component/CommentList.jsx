@@ -1,5 +1,6 @@
 import { convertDate } from "./convertDate.js";
 import commentImg from "../../assets/images/comment profile pic.png";
+import axios from "axios";
 
 function CommentList(props) {
   return (
@@ -24,6 +25,31 @@ function CommentList(props) {
             </div>
             <div className=".comment__sole__rightblock__words" id="sizeChanger">
               {comment.comment}
+            </div>
+            <div className="comment__sole__rightblock__delete">
+              <button
+                onClick={() => {
+                  let commentId = comment.id;
+                  const commentData = {
+                    commentId: commentId,
+                  };
+                  try {
+                    axios
+                      .delete(
+                        `http://localhost:8080/videos/${props.nowVideo.id}/comments`,
+                        commentData
+                      )
+                      .then(() => {
+                        props.getById(props.nowVideo.id);
+                        alert("deleted");
+                      });
+                  } catch (error) {
+                    console.error(error);
+                  }
+                }}
+              >
+                DELETE
+              </button>
             </div>
           </div>
         </div>

@@ -52,7 +52,11 @@ function HomePage() {
           <NowVideo nowVideo={nowVideo} getById={getById} />
 
           {/* Comment Section */}
-          <CommentList comments={nowVideo.comments} />
+          <CommentList
+            comments={nowVideo.comments}
+            nowVideo={nowVideo}
+            getById={getById}
+          />
         </div>
 
         {/* Next Video Section*/}
