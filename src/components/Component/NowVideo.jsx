@@ -29,7 +29,23 @@ function NowVideo(props) {
             </div>
 
             <div className="nowVideo__info-head-4">
-              <img src={likesIcon} alt="" />
+              <img
+                src={likesIcon}
+                alt=""
+                onClick={() => {
+                  try {
+                    axios
+                      .put(
+                        `http://localhost:8080/videos/${props.nowVideo.id}/likes`
+                      )
+                      .then(() => {
+                        props.getById(props.nowVideo.id);
+                      });
+                  } catch (error) {
+                    console.error(error);
+                  }
+                }}
+              />
               <h3>{props.nowVideo.likes}</h3>
             </div>
           </div>
