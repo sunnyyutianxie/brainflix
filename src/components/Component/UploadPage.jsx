@@ -1,28 +1,42 @@
 import uploadImg from "../../assets/images/Upload-video-preview.jpg";
 import publishButton from "../../assets/Icons/publish.svg";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import axios from "axios";
 
 function UploadPage() {
   const navigate = useNavigate();
+  const [selectedImage, setSelectedImage] = useState(null);
 
   return (
     <div id="uploadBlock">
       <h1 className="uploadVideo__title">Upload Video</h1>
       <form
         action=""
-        onSubmit={(event) => {
+        onSubmit={async (event) => {
           event.preventDefault();
           const title = event.target.elements.title.value;
           const description = event.target.elements.description.value;
 
-          const videoData = {
-            title: title,
-            description: description,
-          };
+          // const videoData = {
+          //   title: title,
+          //   description: description,
+          //   image: selectedImage,
+          // };
+          const videoData = new FormData();
+          videoData.append("title", title);
+          videoData.append("description", description);
+          videoData.append("image", selectedImage);
+
+          // console.log(selectedImage);
+          // console.log(videoData);
 
           try {
-            axios.post("http://localhost:8080/videos", videoData);
+            axios.post("http://localhost:8080/videos", videoData, {
+              headers: {
+                "Content-Type": "multipart/form-data",
+              },
+            });
             alert("published");
             navigate("/");
           } catch (error) {
@@ -52,6 +66,16 @@ function UploadPage() {
                 name="description"
                 type="text"
                 placeholder="Add a description to your video"
+              />
+            </div>
+            <div className="uploadVideo__right-image">
+              <label>ADD A IMAGE</label>
+              <input
+                type="file"
+                onChange={(event) => {
+                  const file = event.target.files[0];
+                  setSelectedImage(file);
+                }}
               />
             </div>
           </div>
