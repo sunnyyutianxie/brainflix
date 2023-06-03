@@ -68,8 +68,8 @@ function UploadPage() {
                 placeholder="Add a description to your video"
               />
             </div>
-            <div className="uploadVideo__right-image">
-              <label>ADD A IMAGE</label>
+            <div className="uploadVideo__right-image uploadVideo__right-description">
+              <label>ADD AN IMAGE</label>
               <input
                 type="file"
                 onChange={(event) => {
